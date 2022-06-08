@@ -18,7 +18,7 @@ onMounted(() => {
 <template>
   <div v-editable="blok" class="w-full py-6">
     <h2 class="text-3xl mb-4 text-center">{{ blok.headline }}</h2>
-    <model-viewer :src="blok.modelSrc" camera-controls />
+    <model-viewer v-if="isMounted" :src="blok.modelSrc" camera-controls />
   </div>
 </template>
 
