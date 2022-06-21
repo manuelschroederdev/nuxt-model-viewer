@@ -3,12 +3,12 @@ defineProps({ blok: Object })
 
 const isMounted = ref(false)
 
-const loadModelViewer = () => {
+const loadModelViewer = async () => {
   console.log('triggered')
-  import('@google/model-viewer')
+  await import('@google/model-viewer')
 }
 
-onMounted(() => {
+onMounted(async () => {
   isMounted.value = true
   loadModelViewer()
 })
