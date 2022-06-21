@@ -1,5 +1,4 @@
 <script setup>
-//import '@google/model-viewer'
 defineProps({ blok: Object })
 
 const isMounted = ref(false)
@@ -16,10 +15,26 @@ onMounted(() => {
 </script>
 
 <template>
-  <div v-editable="blok" class="w-full py-6">
-    <h2 class="text-3xl mb-4 text-center">{{ blok.headline }}</h2>
-    <model-viewer v-if="isMounted" :src="blok.modelSrc" camera-controls />
-  </div>
+  <section
+    v-editable="blok"
+    class="container grid md:grid-cols-2 gap-16 place-items-center py-6"
+  >
+    <div
+      class="order-last"
+      :class="blok.reverse_layout ? '' : 'lg:order-first'"
+    >
+      <Overline>{{ blok.overline }}</Overline>
+      <Headline>{{ blok.headline }}</Headline>
+      <FormattedText>{{ blok.text }}</FormattedText>
+    </div>
+    <model-viewer
+      v-if="isMounted"
+      :src="blok.modelSrc"
+      camera-controls
+      ar
+      ar-modes="webxr scene-viewer quick-look"
+    />
+  </section>
 </template>
 
 <style>
