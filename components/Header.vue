@@ -1,10 +1,13 @@
 <template>
   <Transition name="fade">
     <header v-if="visible" class="fixed z-50 top-0 left-0 w-full h-32">
-      <div class="container h-full flex items-center">
+      <div
+        class="container h-full flex items-center justify-center md:justify-start"
+      >
         <a href="#"
           ><img
             src="~/assets/images/sb-logo.svg"
+            width="240"
             alt="Storyblok"
             class="pointer-events-none"
         /></a>

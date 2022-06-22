@@ -3,8 +3,12 @@
     class="relative h-[calc(100vh-128px)] overflow-hidden flex items-end pb-24"
   >
     <div class="container relative z-10 text-center">
-      <h1 class="text-7xl font-bold uppercase mb-4">{{ blok.headline }}</h1>
-      <h2 class="text-4xl font-thin uppercase">{{ blok.subheadline }}</h2>
+      <h1 class="text-3xl md:text-7xl font-bold uppercase mb-4">
+        {{ blok.headline }}
+      </h1>
+      <h2 class="text-xl md:text-4xl font-thin uppercase">
+        {{ blok.subheadline }}
+      </h2>
     </div>
     <img
       :src="blok.image.filename"
