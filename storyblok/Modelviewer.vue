@@ -1,17 +1,18 @@
 <script setup>
+import('@google/model-viewer')
 defineProps({ blok: Object })
 
-const isMounted = ref(false)
+/* const isMounted = ref(false)
 
 const loadModelViewer = () => {
   console.log('triggered')
-  import('@google/model-viewer')
+  import ModelViewer from '@google/model-viewer'
 }
 
 onMounted(() => {
   isMounted.value = true
   loadModelViewer()
-})
+}) */
 </script>
 
 <template>
@@ -28,7 +29,6 @@ onMounted(() => {
       <FormattedText>{{ blok.text }}</FormattedText>
     </div>
     <model-viewer
-      v-if="isMounted"
       :src="blok.modelSrc"
       camera-controls
       ar
