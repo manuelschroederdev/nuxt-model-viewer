@@ -6,6 +6,9 @@ module.exports = {
       center: true,
       padding: '2rem',
     },
+    fontFamily: {
+      sans: 'Roboto, sans-serif',
+    },
     extend: {
       colors: {
         primary: '#50b0ae',
